@@ -10,7 +10,7 @@ const pool = new Pool({
 const cohortName = process.argv[2];
 
 const values = [`%${cohortName}%`];
-
+//always use parameterized queries to avoid SQL injection attacks
 const queryString = `
 SELECT DISTINCT teachers.name as teacher, cohorts.name as cohort
 FROM teachers

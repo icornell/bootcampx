@@ -10,7 +10,8 @@ const pool = new Pool({
 
 const cohortName = process.argv[2] || ""; // Get the cohort name from the command line arguments
 const limit = process.argv[3] || 5; // Get the limit from the command line arguments; default to 5 if not provided
-// Use parameterized queries to avoid SQL injection
+
+// Always use parameterized queries to avoid SQL injection
 const queryString = `
 SELECT students.id as student_id, students.name as name, cohorts.name as cohort
 FROM students
